@@ -1,0 +1,16 @@
+h1 {
+    color:#22d12b;
+}
+
+.navbar-brand {
+    font-size:30px;
+    padding-right: 30px !important;
+}
+
+.subtitle{
+    color:#2b2b2b;
+    text-align:center;
+    font-size:50px;
+    margin:15px;
+    margin-bottom:30px;
+}
