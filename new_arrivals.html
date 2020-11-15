@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -12,62 +12,72 @@
   </head>
   <body>
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+      <!-- Scripts -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 
-    <!--Navigation Bar-->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Shop</a>
-       
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="http://webdev.scs.ryerson.ca/~r4dhir/cps530proj/index.html">Home</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="http://webdev.scs.ryerson.ca/~r4dhir/cps530proj/new_arrivals.html">New Arrivals <span class="sr-only">(current)</span> </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Women</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Men</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact Us</a>
-              </li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown link
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-          </ul>
-        </div>
+      <!--Navigation Bar-->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <a class="navbar-brand" href="#">Shop</a>
+
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+              <ul class="navbar-nav">
+                  <li class="nav-item">
+                      <a class="nav-link" href="http://webdev.scs.ryerson.ca/~r4dhir/cps530proj/index.html">Home</a>
+                  </li>
+                  <li class="nav-item active">
+                      <a class="nav-link" href="http://webdev.scs.ryerson.ca/~r4dhir/cps530proj/new_arrivals.html">New Arrivals <span class="sr-only">(current)</span> </a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Women</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Men</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Contact Us</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Dropdown link
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <a class="dropdown-item" href="#">Action</a>
+                          <a class="dropdown-item" href="#">Another action</a>
+                          <a class="dropdown-item" href="#">Something else here</a>
+                      </div>
+                  </li>
+              </ul>
+          </div>
+
+          <!--Shopping Cart Icon-->
+          <a href="cart_page.html" class="nav-link">
+              <img src="./images/whitecart.png" class="cart_icon" />
+          </a>
       </nav>
+
+      <!--Alert pops up when item added to cart-->
+      <div class="alert alert-info fixed-top" id="cart_alert" style="display:none">
+          Item added to cart!
+      </div>
 
       <div class="container">
           <h3 class="subtitle">New Arrivals</h3>
 
           <!--Fetch products from database and generate list-->
           <script type="text/javascript">
-            var xmlhttp = new XMLHttpRequest();
-            xmlhttp.onreadystatechange = function() {
-              if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("trendingSection").innerHTML = this.responseText;
-              }
-            };
-            xmlhttp.open("GET","getArrivals.php");
-            xmlhttp.send();
+              var xmlhttp = new XMLHttpRequest();
+              xmlhttp.onreadystatechange = function () {
+                  if (this.readyState == 4 && this.status == 200) {
+                      document.getElementById("trendingSection").innerHTML = this.responseText;
+                  }
+              };
+              xmlhttp.open("GET", "getArrivals.php");
+              xmlhttp.send();
           </script>
-          
+
           <!--Products to be displayed here-->
-          <div  id="trendingSection" class="row">
+          <div id="trendingSection" class="row">
 
           </div>
       </div>
