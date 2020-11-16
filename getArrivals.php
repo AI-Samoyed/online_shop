@@ -30,7 +30,7 @@
                         echo"<div class='card-body'>";
                           echo "<h5 class='card-title'>". $row["title"]. "</h5>";
                           echo "<p class='card-text'>" . $row['price'] . "</p>";
-                          echo "<button type='button' class='btn btn-primary' onclick='addToCartWithMessage(" . $row['id'] . ")'> Add to Cart</button>"
+                          echo "<button type='button' class='btn btn-primary' onclick='addToCartWithMessage(" . $row['id'] . ")'> Add to Cart</button>";
                         echo "</div>";
 
                       echo"</div>";
