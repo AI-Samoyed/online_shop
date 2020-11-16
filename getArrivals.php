@@ -14,7 +14,7 @@
         }
         
         //Query for columns from table
-        $sql = "SELECT title, price, img_ FROM Products WHERE date_added='2020-11-10 08:21:30'";
+        $sql = "SELECT title, price, id, img_ FROM Products WHERE date_added='2020-11-10 08:21:30'";
         if($result = mysqli_query($conn, $sql)){
 
           //If records exist, construct elements and display them
@@ -30,7 +30,7 @@
                         echo"<div class='card-body'>";
                           echo "<h5 class='card-title'>". $row["title"]. "</h5>";
                           echo "<p class='card-text'>" . $row['price'] . "</p>";
-                          echo "<a href='#' class='btn btn-primary'> Add to Cart</a>";
+                          echo "<button type='button' class='btn btn-primary' onclick='addToCartWithMessage(" . $row['id'] . ")'> Add to Cart</button>";
                         echo "</div>";
 
                       echo"</div>";
