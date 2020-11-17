@@ -19,15 +19,17 @@
 
       <!--Navigation Bar-->
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDRopdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
           <a class="navbar-brand" href="#">Shop</a>
-
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav">
-                  <li class="nav-item">
-                      <a class="nav-link" href="http://webdev.scs.ryerson.ca/~r4dhir/cps530proj/index.html">Home</a>
-                  </li>
                   <li class="nav-item active">
-                      <a class="nav-link" href="http://webdev.scs.ryerson.ca/~r4dhir/cps530proj/new_arrivals.html">New Arrivals <span class="sr-only">(current)</span> </a>
+                      <a class="nav-link" href="http://webdev.scs.ryerson.ca/~groebuck/cps530proj/index.html">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="http://webdev.scs.ryerson.ca/~groebuck/cps530proj/new_arrivals.html">New Arrivals</a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" href="#">Women</a>
@@ -50,11 +52,11 @@
                   </li>
               </ul>
           </div>
-
           <!--Shopping Cart Icon-->
-          <a href="cart_page.html" class="nav-link">
+          <a href="cart_page.html" class="nav-link" style="right:0;top:10px;position:absolute">
               <img src="./images/whitecart.png" class="cart_icon" />
           </a>
+
       </nav>
 
       <!--Alert pops up when item added to cart-->
