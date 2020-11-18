@@ -2,6 +2,36 @@ h1 {
     color:#22d12b;
 }
 
+header {
+    padding: 10px;
+}
+
+a {
+    color: inherit;
+}
+
+ul {
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+footer {
+    
+    display: block;
+    left: 0;
+    padding-top: 10px;
+    margin-top: 60px;
+    width: 100%;
+    text-align: center;
+    height:260px;
+    background-color: darkgrey;
+}
+
 .navbar-brand {
     font-size:30px;
     padding-right: 30px !important;
@@ -23,4 +53,34 @@ h1 {
 .space_offset {
     margin-top: 5px;
     margin-right:5px;
+}
+
+.footer_items {
+    list-style-type: none;
+    color: black;
+}
+
+.footerSubtitle {
+    text-align: center;
+    font-size: 18px;
+    color:rgb(63, 63, 63);
+}
+#bottom {
+    background-color: darkgray;
+}
+#container {
+    min-height: 100%;
+    position:relative;
+}
+#footerContainer {
+    margin-top: 30px;
+}
+
+#formSubmit {
+    background-color: black;
+    border-color: black;
+}
+
+#trendingSection {
+    margin-bottom: 100px;
 }
