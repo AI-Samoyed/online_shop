@@ -87,5 +87,19 @@ footer {
 /* Set the size of the div element that contains the map */
 #map {
     height: 400px;
-    width: 100%;
+    width: 40%;
+    float:right;
+    padding: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    
+}
+#about_us_info {
+    
+    width: 55%;
+    float:left;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    
+    padding: 8px 8px;
+    
+
 }
