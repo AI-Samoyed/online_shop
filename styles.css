@@ -29,14 +29,17 @@ footer {
     width: 100%;
     text-align: center;
     height:260px;
-    background-color: darkgrey;
+    background-color: #f3ded0;
 }
 
 .navbar-brand {
     font-size:30px;
     padding-right: 30px !important;
+   
 }
-
+.navbar  {
+    background-color: #435545;
+}
 .subtitle{
     color:#2b2b2b;
     text-align:center;
@@ -66,7 +69,7 @@ footer {
     color:rgb(63, 63, 63);
 }
 #bottom {
-    background-color: darkgray;
+    background-color: #435545;
 }
 #container {
     min-height: 100%;
