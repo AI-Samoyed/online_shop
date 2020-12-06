@@ -18,27 +18,17 @@
     <script>
       function initMap() {
         const store1 = { lat: 43.6696926, lng: -79.3931257 };
-        const store2 = { lat: 30.6696926, lng: -60.3931257 };
+        //const store2 = { lat: 30.6696926, lng: -60.3931257 };
         //const store3 = { lat: 41.6696926, lng: -81.3931257 };
         const map = new google.maps.Map(document.getElementById("map"), {
           zoom: 11,
-          center: store1, store2,
+          center: store1,
         });
         
         const marker1 = new google.maps.Marker({
           position: store1,
           map: map,
-        });
-        
-        const marker2 = new google.maps.Marker({
-          position: store2,
-          map: map,
-        });
-        /*
-        const marker3 = new google.maps.Marker({
-          position: store3,
-          map: map,
-        });*/
+        }); 
       }
     </script>
   </head>
