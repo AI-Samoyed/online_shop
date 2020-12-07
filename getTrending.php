@@ -23,7 +23,7 @@
                       echo "<div class='col-sm-4'>";
 
                         echo "<div class='card' style='width: 18rem;'>";
-                          echo "<img src=". "'" . $row["img_"] . "'" . " class='card-img-top'>";
+                          echo "<img src=". "'" . $row["img_"] . "'" . " class='card-img-top' alt=". "'" . $row["title"] . "'>";
 
                           echo"<div class='card-body'>";
                             echo "<h5 class='card-title'>". $row["title"]. "</h5>";
