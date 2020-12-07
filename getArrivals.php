@@ -23,13 +23,17 @@
                   //for every product, generate an element and display it
                   while($row = mysqli_fetch_array($result)){
                     echo "<div class='col-sm-4'>";
-
+                    
+                    echo "<a href='./product_detail?idNum=" . $row['id'] . "'>";
                       echo "<div class='card' style='width: 18rem;'>";
-                        echo "<img src=". "'" . $row["img_"] . "'" . " class='card-img-top'>";
+                        echo "<img src=". "'" . $row['img_'] . "'" . " class='card-img-top' alt=". "'" . $row['title'] . "'>";
 
                         echo"<div class='card-body'>";
                           echo "<h5 class='card-title'>". $row["title"]. "</h5>";
                           echo "<p class='card-text'>" . $row['price'] . "</p>";
+
+                          echo "</a>";
+                          echo "<br />";
                           echo "<button type='button' class='btn btn-primary' onclick='addToCartWithMessage(" . $row["id"] . ", " . '"' . $row["price"] . '"'. ", " . $row["qty"] . ")'> Add to Cart</button>";
                         echo "</div>";
 

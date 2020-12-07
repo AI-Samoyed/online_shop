@@ -13,7 +13,7 @@
             die("Connection failed: " . $conn->connect_error);
         }
           //Query for columns from table
-          $sql = "SELECT title, price, id, img_, qty FROM Products";
+          $sql = "SELECT id, title, price, img_, qty FROM Products";
           if($result = mysqli_query($conn, $sql)){
 
             //If records exist, construct elements and display them
@@ -22,7 +22,7 @@
                     while($row = mysqli_fetch_array($result)){
                       echo "<div class='col-sm-4'>";
 
-                      echo "<a href='./product_detail?idNum=" .  $row['id'] . " class='product-card'>";
+                      echo "<a href='./product_detail?idNum=" . $row['id'] . "'>";
                         echo "<div class='card' style='width: 18rem;'>";
                           echo "<img src=". "'" . $row['img_'] . "'" . " class='card-img-top' alt=". "'" . $row['title'] . "'>";
 

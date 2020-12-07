@@ -25,6 +25,15 @@ body {
     height: 100%;
 }
 
+.card {
+    transition: transform .2s !important;
+}
+
+.card:hover {
+    transform: scale(1.1) !important;
+    cursor: pointer;
+}
+
 footer {
     
     display: block;
@@ -81,6 +90,19 @@ footer {
     font-size: 18px;
     color:rgb(63, 63, 63);
 }
+.prod-img {
+    margin-top: 50px;
+    width:400px;
+    height:400px;
+}
+
+.prod-subtitle {
+    color:#2b2b2b;
+    text-align:center;
+    font-size:40px;
+    margin:15px;
+    margin-bottom:30px;
+}
 #bottom {
     background-color: #435545;
 }
@@ -102,19 +124,15 @@ footer {
 }
 /* Set the size of the div element that contains the map */
 #map {
-    height: 400px;
-    width: 40%;
-    float:right;
+    height: 350px;
+    width: 500px;
     padding: 8px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     
 }
 #about_us_info {
-    
-    width: 55%;
-    float:left;
+    width: 500px;  
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    
     padding: 8px 8px;
     
 

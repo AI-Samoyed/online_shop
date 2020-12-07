@@ -5,8 +5,6 @@
         $password = "VoyFram5";
         $dbname = "r4dhir";
 
-        $idNum=0;
-
         //Establish connection with database
         $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -15,12 +13,10 @@
             die("Connection failed: " . $conn->connect_error);
         }
 
-        if(!empty($_GET['idNum'])) {
-          $idNum = $_GET['idNum']; 
-        }
+          $idNum = htmlspecialchars($_GET["idNum"]); 
         
         //Query for columns from table
-        $sql = "SELECT title, price, descr, img_ FROM Products WHERE id=" . $idNum;
+        $sql = "SELECT title, price, descr, img_, qty FROM Products WHERE id=" . "'" . $idNum . "'";
         if($result = mysqli_query($conn, $sql)){
 
           //If records exist, construct elements and display them
@@ -28,20 +24,17 @@
 
                   //for every product, generate an element and display it
                   while($row = mysqli_fetch_array($result)){
-                    echo "<div class='col-sm-4'>";
-
-                      echo "<div class='card' style='width: 18rem;'>";
-                        echo "<img src=". "'" . $row["img_"] . "'" . " class='card-img-top'>";
-
-                        echo"<div class='card-body'>";
-                          echo "<h5 class='card-title'>". $row["title"]. "</h5>";
-                          echo "<p class='card-text'>" . $row['price'] . "</p>";
-                          echo "<p class='card-text'>" . $row['descr'] . "</p>";
-                          echo "<button type='button' class='btn btn-primary' onclick='addToCartWithMessage(" . $row['id'] . ")'> Add to Cart</button>";
-                        echo "</div>";
-
-                      echo"</div>";
+                    echo "<div class='col'>"; 
+                    echo "<img src=". "'" . $row['img_'] . "'" . " class='prod-img' alt=". "'" . $row['title'] . "'>";
                     echo "</div>";
+
+                    echo "<div class='col'>";
+                    echo "<h4 class='prod-subtitle'>" . $row['title'] . "</h4>";
+                    echo "<p>" . $row['descr'] . "</p>";
+                    echo "<br />";
+                    echo "<h5>". $row["price"]. "</h5>";
+                   echo "<br />";
+                    echo "<button type='button' class='btn btn-primary' onclick='addToCartWithMessage(" . $row["id"] . ", " . '"' . $row["price"] . '"'. ", " . $row["qty"] . ")'> Add to Cart</button>";
                   }
       
               // Free result set
@@ -49,7 +42,7 @@
       
               //If no records exist or an error occured, return message
             } else {
-            echo "No records were found.";
+            echo "<br /> <h5> Sorry, the product you're looking for does not exist :( </h5>";
           }
         } else {
           echo "Error: Could not execute $sql. " . mysqli_error($conn);
