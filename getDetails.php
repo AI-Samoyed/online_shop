@@ -34,7 +34,7 @@
                     echo "<br />";
                     echo "<h5>". $row["price"]. "</h5>";
                    echo "<br />";
-                    echo "<button type='button' class='btn btn-primary' onclick='addToCartWithMessage(" . $row["id"] . ", " . '"' . $row["price"] . '"'. ", " . $row["qty"] . ")'> Add to Cart</button>";
+                    echo "<button type='button' class='btn btn-primary' onclick='addToCartWithMessage(" . $idNum . ", " . '"' . $row["price"] . '"'. ", " . $row["qty"] . ")'> Add to Cart</button>";
                   }
       
               // Free result set
