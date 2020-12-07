@@ -10,6 +10,11 @@ a {
     color: inherit;
 }
 
+a.product-card,
+a.product-card:hover {
+    color:"inherit" !important;
+}
+
 ul {
     padding: 0;
 }
