@@ -13,7 +13,7 @@
             die("Connection failed: " . $conn->connect_error);
         }
           //Query for columns from table
-          $sql = "SELECT title, price, id, img_ FROM Products";
+          $sql = "SELECT title, price, id, img_, qty FROM Products";
           if($result = mysqli_query($conn, $sql)){
 
             //If records exist, construct elements and display them
@@ -29,9 +29,13 @@
                           echo"<div class='card-body'>";
                             echo "<h5 class='card-title'>". $row['title']. "</h5>";
                             echo "<p class='card-text'>" . $row['price'] . "</p>";
+
+                            
+
                             echo "</a>";
                             echo "<br />";
-                            echo "<button type='button' class='btn btn-primary' onclick='addToCartWithMessage(" . $row['id'] . ")'> Add to Cart</button>";
+                            echo "<button type='button' class='btn btn-primary' onclick='addToCartWithMessage(" . $row["id"] . ", " . '"' . $row["price"] . '"'. ", " . $row["qty"] . ")'> Add to Cart</button>";
+
                           echo "</div>";
                         echo"</div>";
                       echo "</div>";
