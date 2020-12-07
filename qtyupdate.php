@@ -1,21 +1,17 @@
 <?php
 
-        $servername = "localhost";
-        $username = "r4dhir";
-        $password = "VoyFram5";
-        $dbname = "r4dhir";
+$myconn = new mysqli("localhost","r4dhir","VoyFram5","r4dhir");
 
-        //Establish connection with database
-        $conn = new mysqli($servername, $username, $password, $dbname);
+if ($myconn -> connect_error)
+{
+	echo "Connection Failed:" . $myconn->connect_error;
+	exit();
+}
 
-        //Check the connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
 
-        $id = $_POST['id'];
-        $bought = $_POST['bought'];
-        $setCommand = "UPDATE Products SET Qty=Qty-". $bought . " WHERE id='" . $id . "'";
-        mysqli_query($myconn, $setCommand);
+$id = $_POST['id'];
+$bought = $_POST['bought'];
+$setCommand = "UPDATE Products SET Qty=Qty-". $bought . " WHERE id='" . $id . "'";
+mysqli_query($myconn, $setCommand);
 
 ?>
