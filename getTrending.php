@@ -13,7 +13,7 @@
             die("Connection failed: " . $conn->connect_error);
         }
           //Query for columns from table
-          $sql = "SELECT id, title, price, img_, qty FROM Products";
+          $sql = "SELECT id, title, price, img_, qty FROM Products ORDER BY id ASC LIMIT 3";
           if($result = mysqli_query($conn, $sql)){
 
             //If records exist, construct elements and display them

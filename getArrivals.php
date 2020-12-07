@@ -14,7 +14,7 @@
         }
         
         //Query for columns from table
-        $sql = "SELECT title, price, id, img_, qty FROM Products WHERE date_added='2020-11-10 08:21:30'";
+        $sql = "SELECT title, price, id, img_, qty FROM Products ORDER BY id DESC LIMIT 3";
         if($result = mysqli_query($conn, $sql)){
 
           //If records exist, construct elements and display them

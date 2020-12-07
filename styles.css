@@ -27,6 +27,7 @@ body {
 
 .card {
     transition: transform .2s !important;
+    margin-bottom: 20px;
 }
 
 .card:hover {
